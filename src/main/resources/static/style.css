@@ -1,0 +1,34 @@
+
+h1 {
+    color : red;
+}
+
+.border-set {
+    border: solid 1px black;
+}
+
+.contents {
+    width: 600px;
+    height: 800px;
+    margin: 0px auto;
+    border: 9px solid #3DDC97;
+}
+
+.bd{
+    border: solid 1px black;
+}
+
+.bd-inline{
+    border: solid 1px black;
+    display: inline;
+}
+
+.bd-inlineblock{
+    border: solid 1px black;
+    display: inline-block;
+}
+
+.test2{
+
+}
+
