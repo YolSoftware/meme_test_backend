@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <title></title>
+        <body>
+            <div class="bd border-set">
+                asd
+                <div class="contents border-set">
+                    <div class="bd">
+                        <p th:text="${TestList[0].id}"></p>
+                    </div>
+                    <div class="bd">
+                        <p th:text="${TestList[0].contents}"></p>
+                        question box
+                        <ul>
+                            <li th:each="content : ${TestList[0].testItems}" th:text="${content.contents}">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </head>
+</html>
