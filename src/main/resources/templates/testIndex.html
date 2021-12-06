@@ -2,21 +2,114 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script th:inline="javascript">
+            var problemNum = 0;
+            /*<![CDATA[*/
+            var arr = [[ ${TestList} ]];
+            /*]]>*/
+
+            function addProblemNum() {
+
+                problemNum ++;
+                alert(arr[problemNum].id);
+                location.reload();
+            }
+
+            $(document).ready(function(){
+                $("#printId").html(arr[problemNum].id);
+                $("#contentsId").html("문제" +(Number(arr[problemNum].id)+1) + " " + arr[problemNum].contents);
+
+                $("#imageFileNameId").html(arr[problemNum].imageFileName);
+                $("#answerIdId").html(arr[problemNum].answerId);
+
+                $("#problem1Id").html(arr[problemNum].testItems[0].contents);
+                $("#problem2Id").html(arr[problemNum].testItems[1].contents);
+                $("#problem3Id").html(arr[problemNum].testItems[2].contents);
+                $("#problem4Id").html(arr[problemNum].testItems[3].contents);
+                $("#problemPicture1Id").html(arr[problemNum].testItems[0].imageFileName);
+                $("#problemPicture2Id").html(arr[problemNum].testItems[1].imageFileName);
+                $("#problemPicture3Id").html(arr[problemNum].testItems[2].imageFileName);
+                $("#problemPicture4Id").html(arr[problemNum].testItems[3].imageFileName);
+
+                $('.problem').click(function(){
+                    alert(event.target.id);
+                    alert(event.target.html)
+                    problemNum++;
+
+                    $("#printId").html(arr[problemNum].id);
+                    $("#contentsId").html("문제" + (Number(arr[problemNum].id)+1) + " " + arr[problemNum].contents);
+
+                    $("#imageFileNameId").html(arr[problemNum].imageFileName);
+                    $("#answerIdId").html(arr[problemNum].answerId);
+
+                    $("#problem1Id").html(arr[problemNum].testItems[0].contents);
+                    $("#problemPicture1Id").html(arr[problemNum].testItems[0].imageFileName);
+
+                    $("#problem2Id").html(arr[problemNum].testItems[1].contents);
+                    $("#problemPicture2Id").html(arr[problemNum].testItems[1].imageFileName);
+
+                    $("#problem3Id").html(arr[problemNum].testItems[2].contents);
+                    $("#problemPicture3Id").html(arr[problemNum].testItems[2].imageFileName);
+
+                    $("#problem4Id").html(arr[problemNum].testItems[3].contents);
+                    $("#problemPicture4Id").html(arr[problemNum].testItems[3].imageFileName);
+                });
+
+                $("button[name='next']").click(function () {
+                    problemNum++;
+
+                    $("#printId").html(arr[problemNum].id);
+                    $("#contentsId").html("문제" + arr[problemNum].id + " " + arr[problemNum].contents);
+
+                    $("#imageFileNameId").html(arr[problemNum].imageFileName);
+                    $("#answerIdId").html(arr[problemNum].answerId);
+
+                    $("#problem1Id").html(arr[problemNum].testItems[0].contents);
+                    $("#problemPicture1Id").html(arr[problemNum].testItems[0].imageFileName);
+
+                    $("#problem2Id").html(arr[problemNum].testItems[1].contents);
+                    $("#problemPicture2Id").html(arr[problemNum].testItems[1].imageFileName);
+
+                    $("#problem3Id").html(arr[problemNum].testItems[2].contents);
+                    $("#problemPicture3Id").html(arr[problemNum].testItems[2].imageFileName);
+
+                    $("#problem4Id").html(arr[problemNum].testItems[3].contents);
+                    $("#problemPicture4Id").html(arr[problemNum].testItems[3].imageFileName);
+                });
+            });
+        </script>
         <title></title>
         <body>
-            <div class="bd border-set">
-                asd
-                <div class="contents border-set">
-                    <div class="bd">
-                        <p th:text="${TestList[0].id}"></p>
+            <div class="main">
+                <div class="contents">
+                    <div class="description">
+                        <h1> 밈 모의고사</h1>
+                        <div id="explainContents"><p id="contentsId"></p></div>
+                        <div id="imageFileNameId"></div>
                     </div>
-                    <div class="bd">
-                        <p th:text="${TestList[0].contents}"></p>
-                        question box
-                        <ul>
-                            <li th:each="content : ${TestList[0].testItems}" th:text="${content.contents}">
-                        </ul>
+                    <div class="problems">
+                        <div class="problem p1">
+                            <div id="problemPicture1Id"></div>
+                            <div id="problem1Id"></div>
+                        </div>
+
+                        <div class="problem p2">
+                            <div id="problemPicture2Id"></div>
+                            <div id="problem2Id"></div>
+                        </div>
+
+                        <div class="problem p3">
+                            <div id="problemPicture3Id"></div>
+                            <div id="problem3Id"></div>
+                        </div>
+
+                        <div class="problem p4">
+                            <div id="problemPicture4Id"></div>
+                            <div id="problem4Id"></div>
+                        </div>
                     </div>
+                    <button name="next"></button>
                 </div>
             </div>
         </body>

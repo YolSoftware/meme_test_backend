@@ -1,17 +1,59 @@
-
 h1 {
-    color : red;
+    text-align: center;
 }
 
-.border-set {
-    border: solid 1px black;
+
+#explainContents {
+    display: inline-block;
+    width: 480px;
+    margin: 10px 0px 0px 10px;
+}
+
+#imageFileNameId{
+    display: inline-block;
+    width: 280px;
+    margin: 10px 0px 0px 10px;
+}
+.main {
+    margin: 0px auto;
 }
 
 .contents {
-    width: 600px;
-    height: 800px;
+    display: block;
+    width: 800px;
+    height: 900px;
     margin: 0px auto;
-    border: 9px solid #3DDC97;
+    background-color: #3DDC97;
+    border-radius: 10px;
+}
+
+.description {
+    height: 420px;
+}
+
+.problems {
+    height: 480px;
+}
+
+.problem {
+    display: inline-block;
+    width: 350px;
+    height: 220px;
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+
+.p1 {
+    background-color: #256EFF;
+}
+.p2 {
+    background-color: #46237A;
+}
+.p3 {
+    background-color: #FCFCFC;
+}
+.p4 {
+    background-color: #FF495C;
 }
 
 .bd{
@@ -28,7 +70,4 @@ h1 {
     display: inline-block;
 }
 
-.test2{
-
-}
 

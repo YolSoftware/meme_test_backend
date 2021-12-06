@@ -19,7 +19,7 @@ public class TestObjectList
         }
 
         int index = 0;
-        testObjectArray[index].contents = "문제1";
+        testObjectArray[index].contents = "다음 중 주인공이 할 대사로 알맞은 것은?";
         testObjectArray[index].answerId = "1";
         testObjectArray[index].imageFileName = "문제 이미지파일";
 
